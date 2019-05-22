@@ -1,0 +1,149 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<head>
+    <title>Contact V14</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="form/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="form/css/util.css">
+    <link rel="stylesheet" type="text/css" href="form/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="container-contact100">
+    <div class="wrap-contact100">
+        {% if result is defined %}
+            {% if result == 'success' %}
+                <div class="wrap-input100">
+                    <span class="" style="color:green">{{ message }}</span>
+                </div>
+            {% else %}
+                <div class="wrap-input100">
+                    <span class="" style="color:red">{{ message }}</span>
+                </div>
+            {% endif %}
+        {% endif %}
+        <form action="{{ path('validation') }}" method="post" class="contact100-form validate-form">
+
+            <span class="contact100-form-title">
+                Your Client Information
+            </span>
+
+            <label class="label-input100" for="phone">Your Gender</label>
+            <div class="wrap-input100">
+                <select id="civility" name="civility" class="input100" required>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                </select>
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="first-name">Your Name *</label>
+            <div class="wrap-input100 rs1 validate-input">
+                <input id="first-name" class="input100" type="text" name="firstName" placeholder="First name" required>
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 rs1 validate-input">
+                <input class="input100" type="text" name="lastName" placeholder="Last name" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="email">Address</label>
+            <div class="wrap-input100 validate-input">
+                <input id="email" class="input100" type="text" name="address" placeholder="Your Address">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Post Code</label>
+            <div class="wrap-input100">
+                <input id="phone" class="input100" type="number" name="postCode" placeholder="75000">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">City</label>
+            <div class="wrap-input100">
+                <input id="city" class="input100" type="text" name="city" placeholder="Enter Your City">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Country</label>
+            <div class="wrap-input100">
+                <input id="country" class="input100" type="text" name="country" placeholder="Enter Your Country" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Date Of Birth</label>
+            <div class="wrap-input100">
+                <input id="dateOfBirth" class="input100" type="date" name="dateOfBirth" placeholder="Enter Your Date Of Birth">
+                <span class="focus-input100"></span>
+            </div>
+
+            <label class="label-input100" for="phone">Your Fidelity Card Number</label>
+            <div class="wrap-input100">
+                <input id="fidelityCardNumber" class="input100" type="number" name="fidelityCardNumber" placeholder="Enter Your Fidelity Card Number" required>
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" type="submit">
+						<span>
+							Submit
+							<i class="zmdi zmdi-arrow-right m-l-8"></i>
+						</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!--===============================================================================================-->
+<script src="form/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="form/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="form/vendor/bootstrap/js/popper.js"></script>
+<script src="form/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="form/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="form/vendor/daterangepicker/moment.min.js"></script>
+<script src="form/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="form/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="form/js/main.js"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+</body>
+{% endblock body %}
