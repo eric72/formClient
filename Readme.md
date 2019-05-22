@@ -21,6 +21,7 @@ mdp: 12345
 Database access
 
 ------------------------------------------------
+https://remotemysql.com/phpmyadmin/
 user: dshB1LOQM5
 mdp: Hh5BNBCmcT
 ------------------------------------------------
